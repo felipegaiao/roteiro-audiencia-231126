@@ -68,6 +68,8 @@ table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
 th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
 tr:last-child td{border-bottom:0}
+h3.bloco{font-family:var(--f-head);font-size:17px;margin:18px 0 8px}
+.tw .chk{margin:0}
 .note{background:var(--surface);border:1px dashed var(--line);border-radius:8px;padding:12px 14px;color:var(--muted);font-size:14px;margin:0 0 20px}
 @media (max-width:520px){.tema > header{flex-direction:column;gap:8px}}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
@@ -83,6 +85,7 @@ tr:last-child td{border-bottom:0}
 <nav class="tabs" role="tablist" aria-label="Seções">
   <button role="tab" data-t="geral" aria-selected="true">Visão geral</button>
   <button role="tab" data-t="preposto" aria-selected="false">Preposto (Carlos)</button>
+  <button role="tab" data-t="reclamante" aria-selected="false">Perguntas à reclamante</button>
   <button role="tab" data-t="jorge" aria-selected="false">Testemunha Jorge</button>
   <button role="tab" data-t="maicon" aria-selected="false">Testemunha Maicon</button>
   <button role="tab" data-t="alinhar" aria-selected="false">Fatos a conferir</button>
@@ -296,6 +299,103 @@ tr:last-child td{border-bottom:0}
     <div class="row"><p class="lab">Confirmar com ele</p>
       <label class="chk"><input type="checkbox" id="c14"><span>Quais meses a casa abriu aos domingos e em que horário.</span></label></div>
   </article>
+</section>
+
+<!-- ============ RECLAMANTE ============ -->
+<section class="pane" id="reclamante">
+  <h2>Depoimento pessoal da reclamante: Érika Fernanda Alves dos Santos</h2>
+  <p class="lead">Perguntas abertas, na ordem em que fazem sentido no depoimento. A coluna da direita mostra o que cada resposta pode revelar. Cada pergunta tem sua base nos autos; as folhas são as do carimbo do PJe. Marque as que já foram feitas.</p>
+
+  <h3 class="bloco">1. Início e período</h3>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Pergunta</th><th>Base nos autos</th><th>O que a resposta mostra</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><label class="chk"><input type="checkbox" id="r1"><span>Quando foi a primeira vez que a senhora trabalhou na Fun Haus? Que dia, quem a chamou e quanto recebeu?</span></label></td><td>Inicial: 01/06/2022. CNPJ da Fun Haus: 14/07/2022 <span class="ref">Id. ca4e7e3</span></td><td>Fixa o início real; confronta uma data anterior à abertura da empresa.</td></tr>
+      <tr><td>2</td><td><label class="chk"><input type="checkbox" id="r2"><span>Como foi paga entre junho de 2022 e abril de 2023? Por que nenhum comprovante desse período foi juntado?</span></label></td><td>Primeiro PIX: 19/04/2023, R$ 120 <span class="ref">fls. 126</span></td><td>Se disser "dinheiro", fica sem prova de pagamento; se disser PIX, falta o comprovante.</td></tr>
+      <tr><td>3</td><td><label class="chk"><input type="checkbox" id="r3"><span>Quando fez os cursos de brigadista e de socorrista? A senhora já tinha esses cursos quando começou?</span></label></td><td>Cursos de 29/04 a 24/06/2023 <span class="ref">fls. 51-52</span>; inicial diz "contratada para exercer as funções de socorrista"</td><td>Se começou em 2022, não tinha ainda a qualificação que alega.</td></tr>
+    </tbody></table></div>
+
+  <h3 class="bloco">2. Frequência e escolha dos dias</h3>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Pergunta</th><th>Base nos autos</th><th>O que a resposta mostra</th></tr></thead>
+    <tbody>
+      <tr><td>4</td><td><label class="chk"><input type="checkbox" id="r4"><span>Em média, quantos dias por semana a senhora trabalhava em 2023? E em 2024?</span></label></td><td>Inicial: quartas, sextas, sábados e um domingo por mês. PIX: 1 a 7 pagamentos por mês <span class="ref">fls. 61-126</span></td><td>Compara a resposta com os pagamentos.</td></tr>
+      <tr><td>5</td><td><label class="chk"><input type="checkbox" id="r5"><span>Como a senhora ficava sabendo em quais dias iria trabalhar? Quem definia?</span></label></td><td>Fls. 293: "já avia me adiantado a semana"; resumo do cliente diz que ela avisava os dias</td><td>Se ela escolhia ou avisava, enfraquece a escala fixa; se recebia ordem, reforça.</td></tr>
+      <tr><td>6</td><td><label class="chk"><input type="checkbox" id="r6"><span>Houve semanas ou meses em que a senhora não trabalhou? Quais e por quê?</span></label></td><td>Abril, maio e junho/2023 com 1 a 2 pagamentos; maio/2024 com 3; setembro/2024 com 2</td><td>Mede a continuidade.</td></tr>
+      <tr><td>7</td><td><label class="chk"><input type="checkbox" id="r7"><span>Alguma vez a senhora foi substituída por outra pessoa, ou indicou alguém para ir no seu lugar?</span></label></td><td>Contestação: indicava outra pessoa; réplica: "JAMAIS a reclamante se fez substituir"</td><td>Pessoalidade.</td></tr>
+      <tr><td>8</td><td><label class="chk"><input type="checkbox" id="r8"><span>Quando a senhora faltava ou avisava que não ia, o que acontecia? Descreva um caso.</span></label></td><td>Inicial: punições e descontos mesmo com atestado. Fls. 291: Ivan pede que "desconta o affte dela pois ela não ficou"</td><td>Se não houve consequência concreta, afasta a subordinação disciplinar.</td></tr>
+      <tr><td>9</td><td><label class="chk"><input type="checkbox" id="r9"><span>Os pagamentos de segunda, terça e domingo, quando a casa não abre: a que dias se referiam?</span></label></td><td>Fls. 293 e 294: "3 diárias adiantado semana 30 e 31AGO"</td><td>Confirma que eram adiantamentos e não dias trabalhados.</td></tr>
+    </tbody></table></div>
+
+  <h3 class="bloco">3. Outro trabalho</h3>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Pergunta</th><th>Base nos autos</th><th>O que a resposta mostra</th></tr></thead>
+    <tbody>
+      <tr><td>10</td><td><label class="chk"><input type="checkbox" id="r10"><span>Entre 2022 e 2024, a senhora teve outro emprego ou outra atividade? Onde, em quais dias e horários?</span></label></td><td>Contestação: a farda seria de "outros vínculos empregatícios que mantinha fora"; não há CTPS nos autos</td><td>Mostra a incompatibilidade de horários e a ausência de exclusividade.</td></tr>
+      <tr><td>11</td><td><label class="chk"><input type="checkbox" id="r11"><span>Trabalhou como brigadista ou socorrista em outro lugar? Onde foram tiradas as fotos fardada?</span></label></td><td>Fotos <span class="ref">fls. 16, 53, 54</span>; a de fls. 53 mostra placa de banheiro. Contestação diz que são de outro contexto</td><td>Se a farda era de outro local, a foto não prova o uso na casa.</td></tr>
+    </tbody></table></div>
+
+  <h3 class="bloco">4. Função e estrutura de emergência</h3>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Pergunta</th><th>Base nos autos</th><th>O que a resposta mostra</th></tr></thead>
+    <tbody>
+      <tr><td>12</td><td><label class="chk"><input type="checkbox" id="r12"><span>Descreva uma noite de trabalho: onde a senhora ficava e o que fazia?</span></label></td><td>Contestação: controle de acesso ao espaço "Hot"; fotos <span class="ref">fls. 287-290</span></td><td>Se descrever só a entrada do espaço, sustenta a tese da defesa.</td></tr>
+      <tr><td>13</td><td><label class="chk"><input type="checkbox" id="r13"><span>Quantas vezes a senhora prestou socorro a alguém na casa? Conte um caso: data, o que houve e o que fez.</span></label></td><td>Inicial: curativos, contato com sangue e secreções</td><td>Número vago ou caso sem detalhe enfraquece a função de socorrista.</td></tr>
+      <tr><td>14</td><td><label class="chk"><input type="checkbox" id="r14"><span>Quais equipamentos de primeiros socorros havia na casa? Onde ficavam? Quem pedia reposição? Quem conferia os extintores?</span></label></td><td>Fls. 296-297: Carlos pede ao Ivan a "lista de medicamentos"</td><td>Se não souber, a função era do Ivan; se souber, pode ser pela convivência.</td></tr>
+      <tr><td>15</td><td><label class="chk"><input type="checkbox" id="r15"><span>Quem comprou a farda que a senhora usava? A casa fornecia?</span></label></td><td>Fls. 295: Ivan paga R$ 50 pela "camisa de brigada" e pede reembolso</td><td>Mostra se a casa fornecia uniforme à autora ou só ao Ivan.</td></tr>
+      <tr><td>16</td><td><label class="chk"><input type="checkbox" id="r16"><span>A senhora usava luvas ou outro EPI? Pediu algum? Como sabia que clientes tinham doença infecciosa?</span></label></td><td>Inicial: contato com sangue e clientes com HIV "amplamente sabido"</td><td>Prepara a oposição à perícia de insalubridade.</td></tr>
+    </tbody></table></div>
+
+  <h3 class="bloco">5. Horário e comando</h3>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Pergunta</th><th>Base nos autos</th><th>O que a resposta mostra</th></tr></thead>
+    <tbody>
+      <tr><td>17</td><td><label class="chk"><input type="checkbox" id="r17"><span>A que horas a senhora chegava e saía em cada dia? Que horas assumia o posto? Parava para comer? Quanto tempo?</span></label></td><td>Inicial: chegada 1 h antes, 20h às 05h30 e 21h às 06h. Contestação: chegada 22h, posto 23h30, saída 5h, 1 h de intervalo</td><td>Confronta jornada, horas extras e intervalo.</td></tr>
+      <tr><td>18</td><td><label class="chk"><input type="checkbox" id="r18"><span>Quem lhe dava ordens? Cite uma ordem concreta e quem deu.</span></label></td><td>Inicial: subordinada ao Carlos e ao "coordenador Jorge"</td><td>Dá concretude ou revela o genérico.</td></tr>
+      <tr><td>19</td><td><label class="chk"><input type="checkbox" id="r19"><span>Quem é o Jorge? Desde quando a senhora o conhece e qual era o papel dele?</span></label></td><td>Fls. 17: conversa com o Jorge</td><td>Fixa o papel dele antes do depoimento da testemunha.</td></tr>
+      <tr><td>20</td><td><label class="chk"><input type="checkbox" id="r20"><span>Quem registrava ou conferia sua presença?</span></label></td><td>Contestação: sem controle de ponto</td><td>Controle de jornada.</td></tr>
+    </tbody></table></div>
+
+  <h3 class="bloco">6. Pagamento</h3>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Pergunta</th><th>Base nos autos</th><th>O que a resposta mostra</th></tr></thead>
+    <tbody>
+      <tr><td>21</td><td><label class="chk"><input type="checkbox" id="r21"><span>Quanto a senhora recebia por noite? Quem fixou? O valor mudou ao longo do tempo?</span></label></td><td>PIX de R$ 120 (2023) a R$ 340-360 (2024)</td><td>Valor da diária real.</td></tr>
+      <tr><td>22</td><td><label class="chk"><input type="checkbox" id="r22"><span>De onde vem o valor de R$ 2.340 por mês e a média de R$ 1.725,49?</span></label></td><td>Inicial: 13 diárias de R$ 180 (CCT) e "média R$ 1.725,49"; fls. 15</td><td>Mostra que o piso da CCT é conta do advogado, não valor pago.</td></tr>
+      <tr><td>23</td><td><label class="chk"><input type="checkbox" id="r23"><span>As gorjetas de R$ 300 por mês: quem pagava, quem repassava e como a senhora sabe esse valor?</span></label></td><td>Inicial: gorjetas médias de R$ 300; planilha: R$ 751 no total <span class="ref">Id. d63aaf0</span></td><td>Base do pedido de integração.</td></tr>
+      <tr><td>24</td><td><label class="chk"><input type="checkbox" id="r24"><span>Recebeu qualquer valor em dinheiro, ou só por PIX?</span></label></td><td>Sem comprovante antes de 19/04/2023</td><td>Abre ou fecha a prova dos primeiros meses.</td></tr>
+    </tbody></table></div>
+
+  <h3 class="bloco">7. Gravidez e saída</h3>
+  <p class="note">Estas perguntas fixam datas. A conversa de 28/08/2024 (fls. 293) e a mensagem de 23/09/2024 (fls. 17) já estão nos autos e prejudicam a defesa; use para fechar datas, não para provocar a explicação do fato.</p>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Pergunta</th><th>Base nos autos</th><th>O que a resposta mostra</th></tr></thead>
+    <tbody>
+      <tr><td>25</td><td><label class="chk"><input type="checkbox" id="r25"><span>Quando a senhora soube que estava grávida e quando contou à casa? A quem?</span></label></td><td>Encaminhamento de 19/08/2024 <span class="ref">fls. 58</span>; mensagem de 28/08/2024 <span class="ref">fls. 293</span>; ecografia de 09/09/2024 <span class="ref">fls. 57</span></td><td>Fixa a ciência. Já comprovada pela prova dos autos.</td></tr>
+      <tr><td>26</td><td><label class="chk"><input type="checkbox" id="r26"><span>Qual foi o último dia em que trabalhou? Quando e como foi "dispensada"?</span></label></td><td>Inicial traz 23/07/2024, "07/2024" e 23/09/2024. Último PIX: 18/10/2024 <span class="ref">fls. 118</span></td><td>As três datas se contradizem; use para fixar uma só.</td></tr>
+      <tr><td>27</td><td><label class="chk"><input type="checkbox" id="r27"><span>Em 23/09/2024 a senhora escreveu "Essa semana eu já estou de volta". Voltava de onde? Ficou afastada? Por quê?</span></label></td><td>Fls. 17; Covid e repouso em 28/08/2024 <span class="ref">fls. 293</span></td><td>Pode revelar afastamento por Covid e repouso antes da suposta dispensa.</td></tr>
+      <tr><td>28</td><td><label class="chk"><input type="checkbox" id="r28"><span>Depois de 23/09/2024, a senhora procurou o Carlos ou o Jorge para voltar? O que disseram?</span></label></td><td>Contestação: a casa só não "ofereceu" mais trabalho</td><td>Mostra se houve recusa expressa de retorno.</td></tr>
+      <tr><td>29</td><td><label class="chk"><input type="checkbox" id="r29"><span>Para que foi o pagamento de 18/10/2024 (R$ 120,17)?</span></label></td><td><span class="ref">fls. 118</span></td><td>Pode indicar trabalho ou acerto depois de 23/09/2024.</td></tr>
+      <tr><td>30</td><td><label class="chk"><input type="checkbox" id="r30"><span>Quando nasceu o seu filho? Trabalhou depois, em outro lugar? Recebeu salário-maternidade ou outro benefício?</span></label></td><td>DPP 23/03/2025; planilha pede salário-maternidade de R$ 24.024</td><td>Fecha o período de 5 meses e eventual duplicidade com o INSS.</td></tr>
+    </tbody></table></div>
+
+  <h3 class="bloco">8. Ivan e as provas dela</h3>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>Pergunta</th><th>Base nos autos</th><th>O que a resposta mostra</th></tr></thead>
+    <tbody>
+      <tr><td>31</td><td><label class="chk"><input type="checkbox" id="r31"><span>Qual a sua relação com o Ivan? Ele trabalhava na casa? Fazendo o quê, desde quando? Quem o pagava?</span></label></td><td>Contestação: "marido, funcionário"; inicial: "casada"; réplica: "pai do filho". Fls. 294-297: "Ivan Brigadista FUN"</td><td>Define quem era o brigadista e fecha a contradição entre as peças.</td></tr>
+      <tr><td>32</td><td><label class="chk"><input type="checkbox" id="r32"><span>A senhora fazia parte do grupo "EQUIPE FUN HAUS"? Como eram feitas as convocações ali?</span></label></td><td><span class="ref">fls. 16</span>: Carlos avisa "horário normal de quarta das 21h às 5h"</td><td>Mostra se o aviso era geral e de quem.</td></tr>
+      <tr><td>33</td><td><label class="chk"><input type="checkbox" id="r33"><span>A senhora tem mensagem em que alguém lhe ordena ir trabalhar em determinado dia? Reconhece a voz do Ivan nos áudios juntados?</span></label></td><td>Réplica diz que os áudios eram do Ivan, "não realizados diretamente a Reclamante"</td><td>Use só depois de ouvir os áudios dos Docs. 3 a 11.</td></tr>
+    </tbody></table></div>
+
+  <div class="tema"><header><h3>Cuidados na inquirição</h3><span class="pill p-mid">Atenção</span></header>
+    <div class="row"><ul>
+      <li>Não perguntar sobre a conversa de 28/08/2024 nem sobre a de 23/09/2024 de forma aberta; o conteúdo já prejudica a defesa. Só fixar datas.</li>
+      <li>Antes da pergunta 33, conferir o conteúdo dos áudios. Hoje só há links de mídia no PDF.</li>
+      <li>Não perguntar se era "autônoma"; é conclusão jurídica e ela vai responder o que a advogada preparou.</li>
+      <li>Sobre os primeiros meses, uma resposta como "recebia em dinheiro" abre o período sem prova; perguntar apenas o que dá resposta verificável.</li>
+      <li>Pergunta 2 e 24 têm esse risco; usar uma das duas.</li>
+    </ul></div></div>
 </section>
 
 <!-- ============ JORGE ============ -->
