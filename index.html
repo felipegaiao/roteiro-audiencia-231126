@@ -1,0 +1,467 @@
+<title>Roteiro de Audiência Fun Haus</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: cabeçalho fixo com abas; cada aba é uma lista de temas, cada tema em três faixas (autos / atenção / perguntas) */
+:root{
+  --bg:#f3f4f6; --surface:#ffffff; --ink:#16202e; --muted:#566274; --line:#d9dde4;
+  --accent:#264f7d; --accent-soft:#e3ebf4;
+  --hi:#a42a2a; --hi-soft:#f8e4e3; --mid:#8a5a00; --mid-soft:#f7ecd2; --ok:#24663f; --ok-soft:#dff0e5;
+  --quote:#eef0f4;
+  --f-head:"IBM Plex Serif",Georgia,serif; --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif; --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#10151c; --surface:#171e28; --ink:#e6eaf0; --muted:#9aa5b5; --line:#2b3544;
+  --accent:#8db4e2; --accent-soft:#1d2b3d;
+  --hi:#f0a19d; --hi-soft:#3a1f1f; --mid:#e6c070; --mid-soft:#33291a; --ok:#7fd0a0; --ok-soft:#173022;
+  --quote:#1d2531; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10151c; --surface:#171e28; --ink:#e6eaf0; --muted:#9aa5b5; --line:#2b3544;
+  --accent:#8db4e2; --accent-soft:#1d2b3d;
+  --hi:#f0a19d; --hi-soft:#3a1f1f; --mid:#e6c070; --mid-soft:#33291a; --ok:#7fd0a0; --ok-soft:#173022;
+  --quote:#1d2531; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+.wrap{max-width:920px;margin:0 auto}
+header.top{padding:28px 0 14px}
+.kicker{font-family:var(--f-mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--f-head);font-weight:600;font-size:clamp(24px,5vw,34px);line-height:1.2;margin:6px 0 8px;text-wrap:balance}
+.sub{color:var(--muted);max-width:68ch;margin:0}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);
+  display:flex;gap:4px;overflow-x:auto;padding:8px 0}
+nav.tabs button{font:inherit;font-size:14px;font-weight:500;color:var(--muted);background:none;border:1px solid transparent;border-radius:6px;padding:8px 12px;cursor:pointer;white-space:nowrap}
+nav.tabs button[aria-selected="true"]{background:var(--accent-soft);color:var(--accent);border-color:var(--accent)}
+nav.tabs button:focus-visible,.chk input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+section.pane{display:none;padding-top:22px}
+section.pane.on{display:block}
+h2{font-family:var(--f-head);font-weight:600;font-size:22px;margin:0 0 4px;text-wrap:balance}
+.lead{color:var(--muted);margin:0 0 18px;max-width:70ch}
+.tema{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin:0 0 16px;overflow:hidden}
+.tema > header{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line)}
+.tema h3{font-family:var(--f-head);font-size:17px;margin:0;font-weight:600;text-wrap:balance}
+.pill{font-family:var(--f-mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:3px 9px;white-space:nowrap;flex:none}
+.p-hi{background:var(--hi-soft);color:var(--hi)} .p-mid{background:var(--mid-soft);color:var(--mid)} .p-ok{background:var(--ok-soft);color:var(--ok)}
+.row{padding:12px 16px;border-top:1px solid var(--line);min-width:0}
+.row:first-of-type{border-top:0}
+.lab{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.row p{margin:0 0 8px} .row p:last-child{margin-bottom:0}
+.row ul{margin:0;padding-left:20px} .row li{margin:0 0 5px}
+blockquote{margin:6px 0 8px;padding:8px 12px;background:var(--quote);border-radius:6px;font-size:14px}
+.ref{font-family:var(--f-mono);font-size:12px;color:var(--accent);background:var(--accent-soft);border-radius:4px;padding:1px 6px;white-space:nowrap}
+.atencao{background:var(--mid-soft)} .atencao.hi{background:var(--hi-soft)}
+.atencao .lab{color:inherit}
+.chk{display:flex;gap:10px;align-items:flex-start;margin:0 0 6px}
+.chk input{margin-top:5px;flex:none}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0 0 20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.card .n{font-family:var(--f-head);font-size:26px;font-weight:600;line-height:1.1;font-variant-numeric:tabular-nums}
+.card .t{color:var(--muted);font-size:13px;margin-top:4px}
+.tl{list-style:none;margin:0 0 20px;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 12px 18px}
+.tl li::before{content:"";position:absolute;left:-6px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.tl li.hot::before{border-color:var(--hi);background:var(--hi)}
+.tl .d{font-family:var(--f-mono);font-size:12px;color:var(--muted);display:block}
+.tw{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:8px;margin:0 0 20px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500}
+tr:last-child td{border-bottom:0}
+.note{background:var(--surface);border:1px dashed var(--line);border-radius:8px;padding:12px 14px;color:var(--muted);font-size:14px;margin:0 0 20px}
+@media (max-width:520px){.tema > header{flex-direction:column;gap:8px}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <div class="kicker">ATOrd 0000152-64.2025.5.10.0003 · 3ª VT Brasília · 23-11-2026, 10h10</div>
+  <h1>Roteiro de audiência: preposto e testemunhas</h1>
+  <p class="sub">Só o que os autos dizem sobre cada ponto, o que a outra parte vai explorar e o que cada pessoa precisa saber responder antes de entrar. Folhas pelo carimbo do PJe; citar sempre pelo Id.</p>
+</header>
+
+<nav class="tabs" role="tablist" aria-label="Seções">
+  <button role="tab" data-t="geral" aria-selected="true">Visão geral</button>
+  <button role="tab" data-t="preposto" aria-selected="false">Preposto (Carlos)</button>
+  <button role="tab" data-t="jorge" aria-selected="false">Testemunha Jorge</button>
+  <button role="tab" data-t="maicon" aria-selected="false">Testemunha Maicon</button>
+  <button role="tab" data-t="alinhar" aria-selected="false">Fatos a conferir</button>
+  <button role="tab" data-t="provas" aria-selected="false">Provas por Id</button>
+</nav>
+
+<!-- ============ VISÃO GERAL ============ -->
+<section class="pane on" id="geral">
+  <h2>O que está em jogo</h2>
+  <p class="lead">A defesa admitiu a prestação de serviços e sustenta que era autônoma e eventual. Por isso o ônus de provar a autonomia é das reclamadas, e é com isso que o preposto e as testemunhas vão ser medidos.</p>
+
+  <div class="tema">
+    <div class="row"><p class="lab">Tese da contestação</p>
+      <blockquote>"A Reclamante jamais manteve vínculo de emprego com as Reclamadas. Sua atuação no estabelecimento era totalmente eventual, ocorrendo apenas quando havia necessidade de substituição de outro funcionário." <span class="ref">Contestação · Id. b29b21d</span></blockquote></div>
+    <div class="row"><p class="lab">Tese da inicial</p>
+      <p>Admissão em 01/06/2022 como socorrista; quartas (20h às 05h30), sextas e sábados (21h às 06h) e um domingo por mês; dispensa em 23/09/2024 por estar grávida; indenização por dano moral de R$ 25.000. Valor da causa R$ 180.346,40. <span class="ref">Inicial · Id. 3f977ad</span></p></div>
+  </div>
+
+  <div class="grid">
+    <div class="card"><div class="n">59</div><div class="t">pagamentos PIX únicos (de 66 folhas; 7 são cópias), entre 19/04/2023 e 18/10/2024</div></div>
+    <div class="card"><div class="n">17</div><div class="t">meses com pagamento; máximo de 7 pagamentos em um mês (03/2024 e 07/2024)</div></div>
+    <div class="card"><div class="n">14/07/2022</div><div class="t">abertura do CNPJ da Fun Haus; a inicial pede admissão em 01/06/2022 <span class="ref">Id. ca4e7e3</span></div></div>
+    <div class="card"><div class="n">23/03/2025</div><div class="t">data provável do parto; os 5 meses de estabilidade terminam por volta de 23/08/2025 <span class="ref">fls. 57</span></div></div>
+  </div>
+
+  <h2>Os três documentos que mais vão pesar</h2>
+  <div class="tema">
+    <header><h3>1. A conversa de 23/09/2024 com o Jorge</h3><span class="pill p-hi">Pior prova</span></header>
+    <div class="row"><p>Print juntado pela autora, com número +55 61 8240-9526 (o telefone da carta-convite do Jorge é 61 98240-9526):</p>
+      <blockquote>"O carlinhos falou comigo que enquanto vc estiver grávida não é pra te escalar mais" · "Ele falou comigo, e pediu pra te avisar que foi uma decisão dele" <span class="ref">fls. 17 · Id. 3f977ad</span></blockquote>
+      <p>A réplica diz que essas mensagens "sequer foram impugnadas" (Id. efb8f09). A contestação trata a saída como "mera ausência de nova oferta de trabalho esporádico". Os dois depoimentos precisam explicar essa mensagem.</p></div>
+  </div>
+  <div class="tema">
+    <header><h3>2. A conversa de 28/08/2024 com o Carlos (nossa prova)</h3><span class="pill p-hi">Ciência da gravidez</span></header>
+    <div class="row"><blockquote>"…mais por conta da gestação mandaram ficar de repouso e se hidratar bem" · resposta: "Tranquilo" / "Melhoras aí" · na mesma folha: "Erika 3 diárias adiantado semana 30 e 31AGO" <span class="ref">fls. 293 · Id. 0bfd7a5</span></blockquote>
+      <p>Quem juntou foi a defesa (Doc. 10). Mostra que o Carlos sabia da gestação quase um mês antes de 23/09/2024.</p></div>
+  </div>
+  <div class="tema">
+    <header><h3>3. Os comprovantes PIX (prova da autora)</h3><span class="pill p-ok">Nos favorece em parte</span></header>
+    <div class="row"><p>Todos saem da conta da FHC (CNPJ 43.797.021/0001-92). Frequência abaixo da jornada alegada, nenhum comprovante antes de 19/04/2023, valores de R$ 120 a R$ 520. Mas 59 pagamentos em 17 meses ainda indicam rotina. <span class="ref">fls. 61-126 · Ids. ac010f3, a54f5f6, e9f3380, d247b13</span></p></div>
+  </div>
+
+  <h2>Linha do tempo dos autos</h2>
+  <ol class="tl">
+    <li><span class="d">06/10/2021</span>Abertura do CNPJ da FHC <span class="ref">Id. 7921261</span></li>
+    <li><span class="d">01/06/2022</span>Início alegado pela autora</li>
+    <li><span class="d">14/07/2022</span>Abertura do CNPJ da Fun Haus <span class="ref">Id. ca4e7e3</span></li>
+    <li><span class="d">19/04/2023</span>Primeiro comprovante PIX (R$ 120,00) <span class="ref">fls. 126</span></li>
+    <li><span class="d">29/04 a 24/06/2023</span>Cursos de brigadista (156 h) e socorrista (94 h) <span class="ref">fls. 51-52</span></li>
+    <li><span class="d">15/04/2024</span>Ivan pede reembolso de R$ 50 da "camisa de brigada" <span class="ref">fls. 295</span></li>
+    <li><span class="d">21/07/2024</span>Ivan: "Vc adianta a semana pra mim pra Érika… ela pedil para vc desconta o affte dela pois ela não ficou porque tava passando mau" <span class="ref">fls. 291</span></li>
+    <li><span class="d">13/08/2024</span>Carlos no grupo EQUIPE FUN HAUS: "Amanhã horário normal de quarta das 21h às 5h" <span class="ref">fls. 16</span></li>
+    <li class="hot"><span class="d">28/08/2024</span>Érika informa gestação e Covid ao Carlos <span class="ref">fls. 293</span></li>
+    <li><span class="d">09/09/2024</span>Ecografia: DPP 23/03/2025 <span class="ref">fls. 57</span></li>
+    <li class="hot"><span class="d">22 a 29/09/2024</span>"Ivan 3 diárias adiantado semana 27 e 28SET, descontado 1 diária da ERIKA" <span class="ref">fls. 292-295</span></li>
+    <li class="hot"><span class="d">23/09/2024</span>Mensagem do Jorge: "enquanto vc estiver grávida não é pra te escalar mais" <span class="ref">fls. 17</span></li>
+    <li><span class="d">18/10/2024</span>Último comprovante PIX (R$ 120,17) <span class="ref">fls. 118</span></li>
+    <li><span class="d">10/02/2025</span>Ajuizamento <span class="ref">Id. 3f977ad</span></li>
+    <li><span class="d">01/10/2025 a 03/07/2026</span>Processo suspenso (Tema 1389/STF) e depois pautado <span class="ref">Ids. b28adcc, 1500e57</span></li>
+    <li class="hot"><span class="d">23/11/2026, 10h10</span>Instrução, com cominação de confissão para as partes <span class="ref">Ids. 93b22da, 53f6790</span></li>
+  </ol>
+</section>
+
+<!-- ============ PREPOSTO ============ -->
+<section class="pane" id="preposto">
+  <h2>Preposto: Carlos dos Santos de Jesus</h2>
+  <p class="lead">Representa as duas empresas (carta de preposição, Id. ad3b182). O que disser vincula Fun Haus e FHC, e as respostas precisam bater com a contestação e com os documentos que a própria defesa juntou. A coluna "Confirmar com ele" é para fechar com o Carlos antes de entrar; marque o que já foi conversado.</p>
+
+  <article class="tema">
+    <header><h3>A. A mensagem do Jorge de 23/09/2024 e a saída da Érika</h3><span class="pill p-hi">Risco alto</span></header>
+    <div class="row"><p class="lab">O que os autos dizem</p>
+      <ul>
+        <li>Fls. 17: Jorge escreve que o Carlos disse para não escalá-la enquanto estivesse grávida e que "foi uma decisão dele". <span class="ref">Id. 3f977ad</span></li>
+        <li>Contestação: "não houve qualquer ato de dispensa"; a não convocação seria "mera ausência de nova oferta de trabalho esporádico". <span class="ref">Id. b29b21d</span></li>
+        <li>Fls. 293: o Carlos soube da gestação em 28/08/2024.</li>
+        <li>A inicial fala em três datas de dispensa: 23/07/2024, "07/2024" e 23/09/2024.</li>
+      </ul></div>
+    <div class="row atencao hi"><p class="lab">Atenção</p>
+      <p>A advogada da autora vai ler a mensagem para ele. Qualquer resposta precisa explicar, sem contradizer a contestação, o que ele de fato falou com o Jorge, quando e por quê. A resposta tem que ser a que aconteceu; a defesa se ajusta ao fato e não o contrário.</p></div>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul>
+        <li>O senhor falou com o Jorge sobre a gravidez da Érika? O que disse?</li>
+        <li>Quando soube da gravidez? Por que ela deixou de ser escalada depois de setembro/2024?</li>
+        <li>Quem decide quem é escalado? Existe "escala"?</li>
+        <li>Alguém avisou a Érika formalmente de alguma coisa? Ela foi chamada de novo depois?</li>
+      </ul></div>
+    <div class="row"><p class="lab">Confirmar com ele</p>
+      <label class="chk"><input type="checkbox" id="c1"><span>Conversou com o Jorge sobre a gravidez? Em que termos?</span></label>
+      <label class="chk"><input type="checkbox" id="c2"><span>Por que não houve mais convocação após setembro/2024? Quem decidiu?</span></label>
+      <label class="chk"><input type="checkbox" id="c3"><span>Qual foi o pagamento de 18/10/2024 (R$ 120,17, fls. 118), feito depois do dia 23/09?</span></label>
+    </div>
+  </article>
+
+  <article class="tema">
+    <header><h3>B. Quando a Érika começou</h3><span class="pill p-hi">Risco alto</span></header>
+    <div class="row"><p class="lab">O que os autos dizem</p>
+      <ul>
+        <li>Inicial: admissão em 01/06/2022.</li>
+        <li>CNPJ da Fun Haus aberto em 14/07/2022 (Id. ca4e7e3); o da FHC, em 06/10/2021 (Id. 7921261).</li>
+        <li>Primeiro PIX: 19/04/2023, R$ 120,00 (fls. 126). Segundo: 08/05/2023.</li>
+        <li>Certificados de brigadista e socorrista concluídos em 24/06/2023 (fls. 51-52).</li>
+      </ul></div>
+    <div class="row atencao"><p class="lab">Atenção</p>
+      <p>A data de início que ele disser fixa o período do vínculo, caso seja reconhecido. Ele precisa ter uma resposta própria, com a primeira vez, quem a chamou e se a casa já funcionava antes de 14/07/2022 sob outro nome ou CNPJ. A ausência de comprovantes antes de 19/04/2023 não prova que ela não trabalhou, só que não há prova de pagamento por PIX.</p></div>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul><li>Quando a Érika trabalhou pela primeira vez na casa? Como era paga antes de abril/2023?</li><li>A casa funcionava em junho de 2022?</li></ul></div>
+    <div class="row"><p class="lab">Confirmar com ele</p>
+      <label class="chk"><input type="checkbox" id="c4"><span>Data aproximada da primeira vez e forma de pagamento naquele período.</span></label>
+      <label class="chk"><input type="checkbox" id="c5"><span>A casa existiu antes de 14/07/2022? Sob qual nome ou CNPJ?</span></label>
+    </div>
+  </article>
+
+  <article class="tema">
+    <header><h3>C. Dias, frequência e o "adiantamento da semana"</h3><span class="pill p-mid">Risco médio</span></header>
+    <div class="row"><p class="lab">O que os autos dizem</p>
+      <ul>
+        <li>Contestação: ela comparecia "em média, uma ou duas vezes por semana" e a casa abre às quartas, sextas e sábados; domingo só por "dois meses".</li>
+        <li>PIX: 1 a 7 pagamentos por mês; muitos caem em segunda, terça e domingo, dias em que a casa não abre. Para o resumo do Carlos, são adiantamentos.</li>
+        <li>Fls. 293: "Erika 3 diárias adiantado semana 30 e 31AGO". Fls. 294: "Ivan 3 diárias adiantado semana 27 e 28SET, descontado 1 diária da ERIKA".</li>
+        <li>Fls. 291-292: Ivan pede "adianta a semana" e "desconta um dia da Érika".</li>
+        <li>Fls. 16: Carlos escreve no grupo "Amanhã horário normal de quarta das 21h às 5h".</li>
+      </ul></div>
+    <div class="row atencao"><p class="lab">Atenção</p>
+      <p>A autora vai ler "semana", "escala", "horário normal" e "desconta um dia" como rotina fixa com consequência para falta. Ele precisa explicar com fatos como o adiantamento funcionava, quem escolhia os dias e se havia desconto quando ela não ia.</p></div>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul><li>Em quais dias ela ia, em geral? Quem definia?</li><li>O que significa "adiantar a semana"? Quem pedia?</li><li>Quando ela faltava, o valor era descontado? (fls. 291, 292, 294)</li><li>O horário "normal de quarta, 21h às 5h" valia para quem?</li></ul></div>
+    <div class="row"><p class="lab">Confirmar com ele</p>
+      <label class="chk"><input type="checkbox" id="c6"><span>Em 2023 e em 2024, quantos dias por semana, em geral, e quem escolhia.</span></label>
+      <label class="chk"><input type="checkbox" id="c7"><span>Como funcionava o desconto de uma diária adiantada e não trabalhada.</span></label>
+    </div>
+  </article>
+
+  <article class="tema">
+    <header><h3>D. Horário trabalhado</h3><span class="pill p-mid">Risco médio</span></header>
+    <div class="row"><p class="lab">O que os autos dizem</p>
+      <ul>
+        <li>Contestação (tópico "Horas extras e adicional noturno"): aos domingos, "das 18h às 23h" com 15 minutos de intervalo; nos demais dias, "das 22h às 5h" com 1 hora de intervalo; chegava às 22h mas "somente assumia seu posto às 23:30".</li>
+        <li>Inicial: quartas 20h às 05h30; sextas e sábados 21h às 06h; chegada com 1 h de antecedência.</li>
+      </ul></div>
+    <div class="row atencao"><p class="lab">Atenção</p>
+      <p>A contestação já admite trabalho noturno e uma jornada definida. O horário que ele disser precisa coincidir com essa peça ou ele explica por quê.</p></div>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul><li>A que horas ela chegava e a que horas saía?</li><li>Das 22h às 23h30, o que fazia na casa?</li><li>Havia pagamento a mais quando ficava além do horário?</li></ul></div>
+    <div class="row"><p class="lab">Confirmar com ele</p>
+      <label class="chk"><input type="checkbox" id="c8"><span>Horário real de chegada, de assumir o posto e de saída.</span></label>
+    </div>
+  </article>
+
+  <article class="tema">
+    <header><h3>E. Quem pagava e quanto</h3><span class="pill p-mid">Risco médio</span></header>
+    <div class="row"><p class="lab">O que os autos dizem</p>
+      <ul>
+        <li>Todos os 66 comprovantes têm como origem "FHC P S T LTDA", CNPJ 43.797.021/0001-92, Banco do Brasil (ex.: fls. 61).</li>
+        <li>Valores: R$ 120,00 em 2023; R$ 340 a R$ 360 por transferência em 2024; um de R$ 520,00 (26/12/2023).</li>
+        <li>Fls. 16: no grupo, o Carlos manda todos enviarem o PIX no privado "pq vou fazer pagamento de uma conta digital nova" e depois escreve "Todos os pagamentos efetuados".</li>
+        <li>Contestação: "diárias" de valor não indicado; inicial: média de R$ 1.725,49 por mês e gorjetas de R$ 300.</li>
+      </ul></div>
+    <div class="row atencao"><p class="lab">Atenção</p>
+      <p>A FHC pagar quem trabalha na Fun Haus sustenta o pedido de grupo econômico (art. 2º, §2º, CLT). Ele precisa explicar a relação entre as duas empresas e por que o pagamento sai da conta da FHC. A diária-base e os acréscimos (R$ 160 e R$ 180, segundo o resumo dele) não constam da contestação.</p></div>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul><li>Por que o PIX sai da FHC? Quem são os sócios de cada empresa?</li><li>Quanto era a diária? Quem fixava?</li><li>Havia gorjeta? Quem recebia?</li></ul></div>
+    <div class="row"><p class="lab">Confirmar com ele</p>
+      <label class="chk"><input type="checkbox" id="c9"><span>Sócios e endereço de cada empresa (SAAN Q.2, nº 1165 e nº 1175); por que a FHC paga.</span></label>
+      <label class="chk"><input type="checkbox" id="c10"><span>Valor da diária em 2023 e em 2024, e o que explicava a variação.</span></label>
+    </div>
+  </article>
+
+  <article class="tema">
+    <header><h3>F. O que ela fazia: controle de acesso ou brigadista</h3><span class="pill p-hi">Risco alto</span></header>
+    <div class="row"><p class="lab">O que os autos dizem</p>
+      <ul>
+        <li>Contestação: "permanecer na entrada de um espaço reservado da casa", com "mera função de controle de acesso", com fotos do Doc. 9 (placas "Espaço HOT" e "Espaço LIBERAL"; um banco alto vazio, fls. 287-290).</li>
+        <li>Autora: certificados de brigadista e socorrista (fls. 51-52) e duas fotos de farda com tarja "BRIGADISTA" e rádio (fls. 53-54; também fls. 16).</li>
+        <li>Contestação: a autora trocava de roupa e usava "blusa preta e calça preta"; a farda seria de outros empregos.</li>
+        <li>Fls. 295-297 (Doc. 10): contato "Ivan Brigadista FUN"; Ivan pede reembolso de R$ 50 pela "camisa que foi feita pra mim de brigada"; o Carlos pede a Ivan a "lista de medicamentos" para repor.</li>
+      </ul></div>
+    <div class="row atencao hi"><p class="lab">Atenção</p>
+      <p>A contestação diz que não havia equipamentos de brigada e também que havia um "brigadista formalmente contratado". O resumo do Carlos diz que havia material (desfibrilador, maca, aferidores, cadeira de rodas), gerido pelo Ivan. A advogada da autora já aponta essa aparente contradição (réplica, Id. efb8f09). Ele precisa explicar de modo único e verdadeiro: o que existia na casa, quem cuidava, e o que a Érika fazia de fato.</p></div>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul>
+        <li>A Érika já socorreu alguém na casa? Quantas vezes? Quem mais prestava socorro?</li>
+        <li>Quem era o brigadista da casa? Estava registrado? Como era pago?</li>
+        <li>Havia material de primeiros socorros, extintores, plano de emergência? Quem cuidava?</li>
+        <li>Quem pagou o uniforme da Érika? A casa exigia uniforme?</li>
+      </ul></div>
+    <div class="row"><p class="lab">Confirmar com ele</p>
+      <label class="chk"><input type="checkbox" id="c11"><span>Ivan: vínculo com a casa (registrado, prestador ou freelancer) e se é o "brigadista formalmente contratado" da contestação.</span></label>
+      <label class="chk"><input type="checkbox" id="c12"><span>Se a Érika já prestou algum socorro, mesmo uma vez; e o que o espaço "Hot" exigia dela.</span></label>
+    </div>
+  </article>
+
+  <article class="tema">
+    <header><h3>G. Quem é o Ivan para a Érika</h3><span class="pill p-mid">Risco médio</span></header>
+    <div class="row"><p class="lab">O que os autos dizem</p>
+      <ul>
+        <li>Contestação: "seu marido, funcionário da casa"; a convocação seria por meio dele.</li>
+        <li>Inicial: Érika "casada". Réplica: "o Sr. Ivan, pai do filho da Reclamante".</li>
+        <li>Os áudios Docs. 3 a 8 e 11 (Ids. acb3e3c, dffd287, 19716f2, 1e548e6, 0f5a4bd, b56908f) são do Ivan, não da Érika; a réplica diz que "os áudios não foram realizados diretamente a Reclamante". O conteúdo não consta no PDF dos autos.</li>
+      </ul></div>
+    <div class="row atencao"><p class="lab">Atenção</p>
+      <p>Se Ivan é "funcionário", a palavra aparece na própria contestação. Ele deve ouvir os áudios antes de entrar para não ser surpreendido sobre o que dizem.</p></div>
+    <div class="row"><p class="lab">Confirmar com ele</p>
+      <label class="chk"><input type="checkbox" id="c13"><span>Situação do Ivan com a Érika e com a casa; ouviu os áudios do Doc. 3 ao Doc. 11?</span></label>
+    </div>
+  </article>
+
+  <article class="tema">
+    <header><h3>H. Domingos</h3><span class="pill p-ok">Risco baixo</span></header>
+    <div class="row"><p class="lab">O que os autos dizem</p>
+      <p>Contestação: abertura aos domingos "por apenas dois meses", em caráter experimental, "justamente o período" em que ela costumava ir. Inicial: um domingo por mês, das 06h às 12h. A contestação indica domingo à noite (18h às 23h).</p></div>
+    <div class="row"><p class="lab">Confirmar com ele</p>
+      <label class="chk"><input type="checkbox" id="c14"><span>Quais meses a casa abriu aos domingos e em que horário.</span></label></div>
+  </article>
+</section>
+
+<!-- ============ JORGE ============ -->
+<section class="pane" id="jorge">
+  <h2>Testemunha: Jorge Luiz Santana de Jesus</h2>
+  <p class="lead">Vigilante segundo a carta-convite (Id. a3ba06b), que era para 26/08/2026; o Carlos o descreve como supervisor de segurança. É o "coordenador Jorge" da inicial e o autor da mensagem de 23/09/2024.</p>
+
+  <article class="tema">
+    <header><h3>1. Quem é e a relação com a casa e com o Carlos</h3><span class="pill p-hi">Risco alto</span></header>
+    <div class="row"><p class="lab">O que os autos dizem</p>
+      <ul>
+        <li>Inicial: Érika trabalhava "subordinada ao sócio proprietário, Sr. Carlos, e ao coordenador, sr. Jorge, recebendo ordens".</li>
+        <li>Carta-convite: profissão "Vigilante"; mesmo sobrenome "de Jesus" do preposto (Carlos dos Santos de Jesus). Os autos não dizem se há parentesco.</li>
+      </ul></div>
+    <div class="row atencao hi"><p class="lab">Atenção</p>
+      <p>A primeira pergunta da outra parte tende a ser sobre vínculo, parentesco ou interesse (contradita: art. 829 CLT; depoimento como simples informação). A resposta precisa ser exata e já conhecida pelo advogado antes de ele entrar.</p></div>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul><li>Qual é o seu vínculo com a Fun Haus? É registrado? Quanto recebe?</li><li>Tem parentesco ou amizade íntima com o Sr. Carlos?</li><li>Já teve ou tem processo contra a casa?</li></ul></div>
+    <div class="row"><p class="lab">Confirmar</p>
+      <label class="chk"><input type="checkbox" id="j1"><span>Vínculo atual e à época (2022 a 2024) com a casa.</span></label>
+      <label class="chk"><input type="checkbox" id="j2"><span>Parentesco ou amizade com o Carlos (sobrenome em comum).</span></label>
+    </div>
+  </article>
+
+  <article class="tema">
+    <header><h3>2. A mensagem de 23/09/2024 (fls. 17)</h3><span class="pill p-hi">Ponto central</span></header>
+    <div class="row"><p class="lab">O que o print mostra</p>
+      <blockquote>Érika: "Bom dia, Jorge. Essa semana eu já estou de volta." · Jorge: "O carlinhos falou comigo que enquanto vc estiver grávida não é pra te escalar mais" · Érika: "Como assim, ele não falou nada comigo" · Jorge: "Ele falou comigo, e pediu pra te avisar que foi uma decisão dele" <span class="ref">fls. 17</span></blockquote>
+      <p>O número do print (+55 61 8240-9526) coincide com o da carta-convite (61 98240-9526).</p></div>
+    <div class="row atencao hi"><p class="lab">Atenção</p>
+      <p>O Jorge será confrontado com a mensagem. Ele precisa dizer o que de fato escreveu, o que o Carlos de fato lhe disse e quando. A frase "escalar" também será usada como prova de escala e de poder de direção.</p></div>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul>
+        <li>O senhor escreveu essa mensagem? É o seu número?</li>
+        <li>O que exatamente o Sr. Carlos lhe disse, quando e em que circunstância?</li>
+        <li>Quem faz a escala? O senhor escalava a Érika?</li>
+        <li>O senhor dava ordens à Érika? Controlava horário ou presença?</li>
+      </ul></div>
+    <div class="row"><p class="lab">Confirmar</p>
+      <label class="chk"><input type="checkbox" id="j3"><span>Autoria da mensagem e contexto (data, o que o Carlos falou, por que avisou a Érika).</span></label>
+      <label class="chk"><input type="checkbox" id="j4"><span>Se algum dia foi "coordenador" ou "supervisor" e o que fazia em relação à Érika.</span></label>
+    </div>
+  </article>
+
+  <article class="tema">
+    <header><h3>3. Frequência e rotina da Érika</h3><span class="pill p-mid">Risco médio</span></header>
+    <div class="row"><p class="lab">O que os autos dizem</p>
+      <p>A contestação diz que a casa abre quartas, sextas e sábados, que ela ia uma ou duas vezes por semana, que havia semanas sem comparecer e que podia ser substituída por outra pessoa de sua confiança. A autora diz que nunca se fez substituir.</p></div>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul><li>Em quais dias o senhor via a Érika? Havia dias fixos?</li><li>Ela já foi substituída por alguém? Quem? Quando?</li><li>Quando faltava, havia cobrança, desconto ou advertência?</li><li>Quem era o responsável por ela na casa?</li></ul></div>
+    <div class="row"><p class="lab">Confirmar</p>
+      <label class="chk"><input type="checkbox" id="j5"><span>Um caso concreto de substituição por terceiro, se houve, com nome e data.</span></label></div>
+  </article>
+
+  <article class="tema">
+    <header><h3>4. Função e material de emergência</h3><span class="pill p-mid">Risco médio</span></header>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul><li>O que a Érika fazia na casa?</li><li>Quem eram as pessoas com função de brigada? Quem cuidava de extintores e do material de primeiros socorros?</li><li>Ela usava uniforme? Quem fornecia?</li></ul>
+      <p>Alinhar com os fatos da seção F do preposto, na parte do que ele efetivamente presenciou.</p></div>
+  </article>
+</section>
+
+<!-- ============ MAICON ============ -->
+<section class="pane" id="maicon">
+  <h2>Testemunha: Maicon</h2>
+  <p class="lead">Não aparece nos autos. Segundo o Carlos, é supervisor de segurança desde 2022, quando a Érika chegou, e foi substituído pelo Jorge. Tudo o que se sabe dele vem do Carlos; sem a carta-convite nos autos, o comparecimento depende de ele ser trazido espontaneamente.</p>
+
+  <article class="tema">
+    <header><h3>1. Quem é e o que supervisionava</h3><span class="pill p-hi">Risco alto</span></header>
+    <div class="row"><p class="lab">Atenção</p>
+      <p>"Supervisor de segurança" que acompanhava a Érika no período pode ser lido como superior hierárquico dela. A contestação diz que não havia "controle de jornada" nem "comando hierárquico". Ele precisa dizer, com exatidão, a quem respondia, a quem a Érika respondia e o que de fato supervisionava.</p></div>
+    <div class="row"><p class="lab">Perguntas prováveis</p>
+      <ul><li>Qual é o seu vínculo com a casa, hoje e à época?</li><li>O senhor supervisionava a Érika? Dava instruções? Marcava presença?</li><li>Quem convidou a Érika a trabalhar? Quando foi a primeira vez que o senhor a viu?</li></ul></div>
+    <div class="row"><p class="lab">Confirmar</p>
+      <label class="chk"><input type="checkbox" id="m1"><span>Nome completo, CPF, vínculo à época, período em que esteve na casa e quando saiu.</span></label>
+      <label class="chk"><input type="checkbox" id="m2"><span>Foi convidado por escrito para 23/11/2026? (A carta nos autos é só do Jorge e para 26/08.)</span></label>
+    </div>
+  </article>
+
+  <article class="tema">
+    <header><h3>2. O que ele pode esclarecer</h3><span class="pill p-ok">Útil à defesa</span></header>
+    <div class="row">
+      <ul>
+        <li>Quando a Érika começou e como (relevante porque o CNPJ é de 14/07/2022 e o primeiro PIX é de 19/04/2023).</li>
+        <li>Frequência e semanas sem comparecer; se havia convocação e aceite caso a caso.</li>
+        <li>Quem exercia a função de brigadista, quem tinha o material e quem fiscalizava extintores.</li>
+        <li>Se a casa abriu aos domingos e por quanto tempo; a que horas o espaço "Hot" abria e quando a Érika assumia o posto (contestação: 22h chegada, 23h30 posto).</li>
+        <li>Como o pagamento era feito e se havia valor a mais quando alguém ficava além do horário.</li>
+      </ul></div>
+  </article>
+</section>
+
+<!-- ============ ALINHAR ============ -->
+<section class="pane" id="alinhar">
+  <h2>Fatos sobre os quais a versão precisa ser a mesma</h2>
+  <p class="lead">São pontos em que as três pessoas serão perguntadas sobre o mesmo fato e a contestação já tem posição. A diferença entre versões é o que a outra parte procura.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Fato</th><th>Contestação / documentos</th><th>Carlos</th><th>Jorge</th><th>Maicon</th></tr></thead>
+    <tbody>
+      <tr><td>Início da Érika</td><td>Inicial: 01/06/2022. CNPJ 14/07/2022. 1º PIX 19/04/2023.</td><td>confirmar</td><td>confirmar</td><td>confirmar</td></tr>
+      <tr><td>Dias por semana</td><td>"uma ou duas vezes por semana"; casa abre qua, sex, sáb</td><td>confirmar</td><td>confirmar</td><td>confirmar</td></tr>
+      <tr><td>Domingos</td><td>"dois meses", experimental</td><td>confirmar</td><td>confirmar</td><td>confirmar</td></tr>
+      <tr><td>Horário</td><td>22h chegada, 23h30 posto, saída 5h; domingo 18h às 23h</td><td>confirmar</td><td>confirmar</td><td>confirmar</td></tr>
+      <tr><td>Quem era o brigadista</td><td>"brigadista formalmente contratado"; chat fls. 295-297: Ivan</td><td>confirmar</td><td>confirmar</td><td>confirmar</td></tr>
+      <tr><td>Material de emergência</td><td>Contestação: sem "estrutura física, equipamentos"; Carlos: desfibrilador, maca, aferidores</td><td>confirmar</td><td>confirmar</td><td>confirmar</td></tr>
+      <tr><td>Quando soube da gravidez</td><td>Fls. 293: 28/08/2024, ao Carlos</td><td>confirmar</td><td>confirmar</td><td>confirmar</td></tr>
+      <tr><td>Quem decidiu parar de escalar e quando</td><td>Fls. 17: "decisão dele"; contestação: "não houve dispensa"</td><td>confirmar</td><td>confirmar</td><td>confirmar</td></tr>
+      <tr><td>Desconto por falta</td><td>Fls. 291-294: "desconta um dia da Érika"</td><td>confirmar</td><td>confirmar</td><td>confirmar</td></tr>
+      <tr><td>Pagamento pela FHC</td><td>Todos os PIX saem da FHC</td><td>confirmar</td><td>—</td><td>—</td></tr>
+    </tbody></table></div>
+  <p class="note">Comparar as versões entre si é para identificar o que cada um realmente viu e o que apenas ouviu; cada um responde só pelo que presenciou.</p>
+
+  <h2>O que a advogada da autora provavelmente vai explorar</h2>
+  <div class="tema"><div class="row"><ul>
+    <li>Ônus da prova: "incumbia à parte reclamada comprovar a inexistência de relação de emprego" (réplica).</li>
+    <li>Duração: "2 anos de trabalho ininterruptos e contínuos".</li>
+    <li>Pessoalidade: "JAMAIS a reclamante se fez substituir por outra pessoa".</li>
+    <li>Áudios sem data e não dirigidos a ela; mensagens da inicial "sequer foram impugnadas" e mostram ordens do Jorge e do Carlinhos.</li>
+    <li>Contradição na contestação sobre estrutura de brigada versus existência de brigadista.</li>
+    <li>Certificados e farda com tarja "BRIGADISTA".</li>
+    <li>Estabilidade: depende só do vínculo, "não houve impugnação específica".</li>
+  </ul></div></div>
+</section>
+
+<!-- ============ PROVAS ============ -->
+<section class="pane" id="provas">
+  <h2>Onde está cada prova</h2>
+  <p class="lead">As folhas abaixo são as do carimbo do PJe no PDF dos autos. Os documentos de apoio enviados pelo cliente citam folhas uma abaixo (ex.: "Fls. 60-125" para os comprovantes, que no PDF estão em fls. 61-126); use o Id.</p>
+  <div class="tw"><table>
+    <thead><tr><th>Id.</th><th>Folhas</th><th>O que é</th><th>Para quem pesa</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ref">3f977ad</span></td><td>2-46</td><td>Petição inicial. Prints de grupo (fls. 16), fotos de farda (fls. 16), conversa com Jorge (fls. 17)</td><td>Autora</td></tr>
+      <tr><td><span class="ref">65db1ee</span></td><td>51-54</td><td>Certificados de brigadista e socorrista; selfies de farda</td><td>Autora</td></tr>
+      <tr><td><span class="ref">ca4e7e3</span> <span class="ref">7921261</span></td><td>55, 56</td><td>CNPJ da Fun Haus (abertura 14/07/2022) e da FHC (06/10/2021)</td><td>Defesa</td></tr>
+      <tr><td><span class="ref">d7432f3</span></td><td>57-59</td><td>Ecografia de 09/09/2024 e encaminhamento SES/DF de 19/08/2024</td><td>Autora</td></tr>
+      <tr><td><span class="ref">ac010f3</span> <span class="ref">a54f5f6</span> <span class="ref">e9f3380</span> <span class="ref">d247b13</span></td><td>61-126</td><td>66 comprovantes PIX da FHC (59 únicos)</td><td>Ambas</td></tr>
+      <tr><td><span class="ref">8b15896</span> <span class="ref">1df5f4c</span> <span class="ref">f15166b</span></td><td>127-220</td><td>CCT 2022, 2023, 2024 (bombeiros civis; diária de R$ 180 para eventos, segundo a inicial)</td><td>Autora</td></tr>
+      <tr><td><span class="ref">d63aaf0</span></td><td>221-222</td><td>Planilha da autora: R$ 143.688,69 bruto; R$ 180.346,40 total</td><td>Autora</td></tr>
+      <tr><td><span class="ref">ad3b182</span></td><td>248-251</td><td>Carta de preposição (Carlos, para as duas empresas)</td><td>Defesa</td></tr>
+      <tr><td><span class="ref">b29b21d</span></td><td>252-281</td><td>Contestação conjunta</td><td>Defesa</td></tr>
+      <tr><td><span class="ref">acb3e3c</span> a <span class="ref">b56908f</span></td><td>282-286, 298</td><td>Áudios (links de mídia, sem texto): Docs. 3, 4, 6, 7, 8 e 11</td><td>Defesa</td></tr>
+      <tr><td><span class="ref">c48bfc5</span></td><td>287-290</td><td>Doc. 9: fotos do espaço "Hot" e do "Liberal"</td><td>Defesa</td></tr>
+      <tr><td><span class="ref">0bfd7a5</span></td><td>291-297</td><td>Doc. 10: conversas com Ivan e com Érika; camisa de brigada; lista de medicamentos</td><td>Ambas</td></tr>
+      <tr><td><span class="ref">efb8f09</span></td><td>302-306</td><td>Réplica da autora</td><td>Autora</td></tr>
+      <tr><td><span class="ref">a3ba06b</span> <span class="ref">2c9442e</span></td><td>325-328</td><td>Carta-convite do Jorge (para 26/08/2026) e comprovantes de intimação de testemunhas, sob sigilo</td><td>Defesa</td></tr>
+      <tr><td><span class="ref">93b22da</span> <span class="ref">53f6790</span></td><td>319, 331</td><td>Despachos: instrução redesignada para 23/11/2026, com confissão e testemunhas trazidas pelas partes</td><td>Neutro</td></tr>
+    </tbody></table></div>
+</section>
+</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('nav.tabs button')), panes=[].slice.call(document.querySelectorAll('section.pane'));
+  function show(id){
+    if(!panes.some(function(p){return p.id===id})) id='geral';
+    panes.forEach(function(p){p.classList.toggle('on',p.id===id)});
+    tabs.forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.t===id))});
+  }
+  tabs.forEach(function(b){b.addEventListener('click',function(){location.hash=b.dataset.t;show(b.dataset.t);window.scrollTo(0,0)})});
+  window.addEventListener('hashchange',function(){show(location.hash.slice(1))});
+  show(location.hash.slice(1));
+  var KEY='audiencia-fun-haus-checks';
+  var saved={}; try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+  document.querySelectorAll('.chk input').forEach(function(i){
+    if(saved[i.id]) i.checked=true;
+    i.addEventListener('change',function(){saved[i.id]=i.checked;try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}});
+  });
+})();
+</script>
